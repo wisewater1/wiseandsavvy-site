@@ -401,10 +401,10 @@ function WorldsLedger({ onOpen }) {
 // ---- Artifacts (cards) ----------------------------------------------------
 function Artifacts() {
   const items = [
-    { kind: "White paper", title: "WiseGold: Social Currency", meta: "PDF · 2025" },
-    { kind: "Model package", title: "SELF — Sovereign Economic Layer", meta: "DeepDive · draft 3" },
-    { kind: "Transmission", title: "Notes on metaphysical intrigue", meta: "Root Races · chapter notes" },
-    { kind: "System", title: "VRFLottery — Chainlink-verified draws", meta: "Live · Texas Lottery Oracle" },
+    { kind: "White paper", title: "WiseGold: Social Currency", meta: "PDF · 2025", href: "#wisegold" },
+    { kind: "Model package", title: "SELF — Sovereign Economic Layer", meta: "DeepDive · draft 3", href: "#power" },
+    { kind: "Transmission", title: "Notes on metaphysical intrigue", meta: "Root Races · chapter notes", href: "https://www.barnesandnoble.com/w/root-races-joshua-blake/1149550399?ean=2940185178126" },
+    { kind: "System", title: "VRFLottery — Chainlink-verified draws", meta: "Live · Texas Lottery Oracle", href: "https://tex-lottery-oracle.lovable.app" },
   ];
   return (
     <section className="ws-section" id="artifacts">
@@ -414,14 +414,17 @@ function Artifacts() {
           <h2 className="ws-h2">Documents from the archive.</h2>
         </header>
         <div className="ws-artifact-grid">
-          {items.map((a, i) => (
-            <a key={i} href="#artifacts" className="ws-artifact" onClick={(e)=>e.preventDefault()}>
-              <div className="ws-artifact-kind">{a.kind}</div>
-              <h4 className="ws-artifact-title">{a.title}</h4>
-              <div className="ws-artifact-meta">{a.meta}</div>
-              <div className="ws-artifact-arrow">Open →</div>
-            </a>
-          ))}
+          {items.map((a, i) => {
+            const external = a.href && a.href.startsWith("http");
+            return (
+              <a key={i} href={a.href} className="ws-artifact" target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>
+                <div className="ws-artifact-kind">{a.kind}</div>
+                <h4 className="ws-artifact-title">{a.title}</h4>
+                <div className="ws-artifact-meta">{a.meta}</div>
+                <div className="ws-artifact-arrow">Open →</div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
