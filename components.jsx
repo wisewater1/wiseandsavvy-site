@@ -349,7 +349,7 @@ const WORLDS = [
   { id: "root", eyebrow: "Noir Fiction World", title: "Root Races", phase: "Published",
     lead: "Joshua Blake's noir fiction world about hidden power, spiritual conflict, and metaphysical intrigue.",
     ticks: ["Reads like a dark recovered archive.", "Secret structures and symbolic consequence.", "Available on Barnes & Noble and Reedsy."],
-    cta: "Open the archive", href: "https://www.barnesandnoble.com/s/%22Root+Races%22+Joshua+Blake" },
+    cta: "Open the archive", href: "https://www.barnesandnoble.com/w/root-races-joshua-blake/1149550399?ean=2940185178126" },
   { id: "wisegold", eyebrow: "Cultural Value", title: "WiseGold", phase: "Concept architecture",
     lead: "A concept for programmable reputation and social currency — signal economics for cultural value.",
     ticks: ["White paper exploring signal, not speculation.", "Reputation as a programmable substrate."],
