@@ -308,7 +308,7 @@ function Hero({ onEnter }) {
           </p>
           <div className="ws-hero-ctas">
             <Button onClick={onEnter}>Enter Worlds</Button>
-            <Button variant="secondary" href="#studio">Open DeepDive</Button>
+            <Button variant="secondary" onClick={() => { const el = document.getElementById("artifacts"); if (el) window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" }); }}>Open DeepDive</Button>
           </div>
           <div className="ws-hero-meta">
             <div><span className="ws-label">Current node</span><div className="ws-meta-val">EverAfterAI · live</div></div>
@@ -354,11 +354,11 @@ const WORLDS = [
   { id: "wisegold", eyebrow: "Cultural Value", title: "WiseGold", phase: "Concept architecture",
     lead: "A concept for programmable reputation and social currency — signal economics for cultural value.",
     ticks: ["White paper exploring signal, not speculation.", "Reputation as a programmable substrate."],
-    cta: "Read the white paper", href: "#wisegold" },
+    cta: "Read the white paper", href: "#worlds" },
   { id: "power", eyebrow: "Research Branch", title: "Power Studio",  phase: "Active",
     lead: "The studio branch holding DeepDive — a living archive of research, model packages, and systems in progress.",
     ticks: ["SELF, CPT, MSR, UBI model packages.", "VRFLottery and on-chain systems.", "Platform folders for long-running inquiries."],
-    cta: "Open DeepDive", href: "#power" },
+    cta: "Open DeepDive", href: "#worlds" },
   { id: "oracle", eyebrow: "Live Lottery World", title: "Texas Lottery Oracle", phase: "Live",
     lead: "A verifiable, VRF-backed lottery oracle — a live experiment in cryptographic fairness.",
     ticks: ["Chainlink VRF verifiable draws.", "Runs as a public web app today."],
@@ -402,8 +402,8 @@ function WorldsLedger({ onOpen }) {
 // ---- Artifacts (cards) ----------------------------------------------------
 function Artifacts() {
   const items = [
-    { kind: "White paper", title: "WiseGold: Social Currency", meta: "PDF · 2025", href: "#wisegold" },
-    { kind: "Model package", title: "SELF — Sovereign Economic Layer", meta: "DeepDive · draft 3", href: "#power" },
+    { kind: "White paper", title: "WiseGold: Social Currency", meta: "PDF · 2025", href: "#worlds" },
+    { kind: "Model package", title: "SELF — Sovereign Economic Layer", meta: "DeepDive · draft 3", href: "#worlds" },
     { kind: "Transmission", title: "Notes on metaphysical intrigue", meta: "Root Races · chapter notes", href: "https://www.barnesandnoble.com/w/root-races-joshua-blake/1149550399?ean=2940185178126" },
     { kind: "System", title: "VRFLottery — Chainlink-verified draws", meta: "Live · Texas Lottery Oracle", href: "https://tex-lottery-oracle.lovable.app" },
   ];
