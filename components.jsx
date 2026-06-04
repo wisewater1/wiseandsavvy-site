@@ -41,7 +41,8 @@ function Eyebrow({ children }) {
 // ---- Buttons --------------------------------------------------------------
 function Button({ children, variant = "primary", onClick, href }) {
   const cls = "ws-btn ws-btn-" + variant;
-  if (href) return <a className={cls} href={href} onClick={onClick}>{children}</a>;
+  const external = href && href.startsWith("http");
+  if (href) return <a className={cls} href={href} onClick={onClick} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>{children}</a>;
   return <button className={cls} onClick={onClick}>{children}</button>;
 }
 
@@ -344,23 +345,23 @@ const WORLDS = [
   { id: "everafter", eyebrow: "AI Concept World", title: "EverAfterAI", phase: "Live public node",
     lead: "A digital family tree fused with AI that stores family information and lets people interact with it.",
     ticks: ["Family history stored in one connected archive.", "AI interaction layered on stored memory.", "Presence across generations, not just records."],
-    cta: "Visit EverAfter" },
+    cta: "Visit EverAfter", href: "https://everafterai.net" },
   { id: "root", eyebrow: "Noir Fiction World", title: "Root Races", phase: "Published",
     lead: "Joshua Blake's noir fiction world about hidden power, spiritual conflict, and metaphysical intrigue.",
     ticks: ["Reads like a dark recovered archive.", "Secret structures and symbolic consequence.", "Available on Barnes & Noble and Reedsy."],
-    cta: "Open the archive" },
+    cta: "Open the archive", href: "https://www.barnesandnoble.com/s/%22Root+Races%22+Joshua+Blake" },
   { id: "wisegold", eyebrow: "Cultural Value", title: "WiseGold", phase: "Concept architecture",
     lead: "A concept for programmable reputation and social currency — signal economics for cultural value.",
     ticks: ["White paper exploring signal, not speculation.", "Reputation as a programmable substrate."],
-    cta: "Read the white paper" },
+    cta: "Read the white paper", href: "#wisegold" },
   { id: "power", eyebrow: "Research Branch", title: "Power Studio",  phase: "Active",
     lead: "The studio branch holding DeepDive — a living archive of research, model packages, and systems in progress.",
     ticks: ["SELF, CPT, MSR, UBI model packages.", "VRFLottery and on-chain systems.", "Platform folders for long-running inquiries."],
-    cta: "Open DeepDive" },
+    cta: "Open DeepDive", href: "#power" },
   { id: "oracle", eyebrow: "Live Lottery World", title: "Texas Lottery Oracle", phase: "Live",
     lead: "A verifiable, VRF-backed lottery oracle — a live experiment in cryptographic fairness.",
     ticks: ["Chainlink VRF verifiable draws.", "Runs as a public web app today."],
-    cta: "Launch the live app" },
+    cta: "Launch the live app", href: "https://tex-lottery-oracle.lovable.app" },
 ];
 
 function WorldsLedger({ onOpen }) {
@@ -387,7 +388,7 @@ function WorldsLedger({ onOpen }) {
                 <ul className="ws-ticks">{w.ticks.map((t,i) => <li key={i}>{t}</li>)}</ul>
               </div>
               <div className="ws-ledger-cta">
-                <Button onClick={() => onOpen && onOpen(w.id)}>{w.cta}</Button>
+                <Button href={w.href} onClick={w.href && w.href.startsWith("http") ? undefined : () => onOpen && onOpen(w.id)}>{w.cta}</Button>
               </div>
             </article>
           ))}
