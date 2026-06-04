@@ -1,0 +1,262 @@
+/* =========================================================
+   Wise & Savvy — Colors & Type
+   Source of truth for brand tokens. Import this in any artifact.
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ---------- Core palette — the Wise & Savvy "studio night" ---------- */
+  --ws-bg:            #090b11;   /* primary background — deep studio night */
+  --ws-bg-2:          #0b1018;   /* secondary panel */
+  --ws-bg-3:          #07090d;   /* deepest — footer / well */
+  --ws-surface:       rgba(13,17,26,0.78);   /* card / raised panel */
+  --ws-surface-alt:   rgba(255,255,255,0.03);/* quiet card */
+
+  /* Foreground / text */
+  --ws-fg:            #f4ecdd;   /* bone — main text (warm off-white) */
+  --ws-fg-strong:     #f8fbff;   /* spotlight — selection, key titles */
+  --ws-fg-muted:      #d8d0c3;   /* parchment — secondary */
+  --ws-fg-dim:        #b1aa9d;   /* stone — meta / captions */
+  --ws-fg-on-accent:  #f8fbff;
+
+  /* Signal accents — cyan is primary, violet is supporting */
+  --ws-accent:        #57d8ff;   /* oracle cyan — primary signal */
+  --ws-accent-soft:   rgba(87,216,255,0.12);
+  --ws-accent-border: rgba(87,216,255,0.28);
+  --ws-accent-strong: rgba(87,216,255,0.9);
+  --ws-violet:        #7662ff;   /* deep violet — supporting glow */
+  --ws-violet-soft:   rgba(118,98,255,0.1);
+
+  /* Product-specific accents (sub-brands) */
+  --ws-everafter:     #4a90e2;   /* EverAfter lantern blue */
+  --ws-everafter-soft:#e0e7ff;
+  --ws-savvy:         #13a4ec;   /* SavvySociety AR blue */
+  --ws-savvy-bg:      #111618;
+  --ws-gold:          #d4a24a;   /* WiseGold — only in WiseGold context */
+  --ws-root-red:      #b8412d;   /* Root Races noir */
+
+  /* Lines & dividers */
+  --ws-line:          rgba(107,114,130,0.24);
+  --ws-line-strong:   rgba(126,136,156,0.42);
+  --ws-line-bright:   rgba(87,216,255,0.32);
+
+  /* Shadows */
+  --ws-shadow-sm:     0 4px 12px rgba(0,0,0,0.22);
+  --ws-shadow-md:     0 10px 24px rgba(4,10,18,0.26);
+  --ws-shadow-lg:     0 20px 48px rgba(0,0,0,0.28);
+  --ws-glow-accent:   0 0 0 6px rgba(87,216,255,0.12);
+  --ws-glow-bright:   0 0 16px rgba(87,216,255,0.32);
+
+  /* Radii */
+  --ws-radius-xs:     6px;
+  --ws-radius-sm:     10px;
+  --ws-radius-md:     16px;
+  --ws-radius-lg:     24px;
+  --ws-radius-xl:     34px;   /* hero panels on the site */
+  --ws-radius-pill:   9999px;
+
+  /* Spacing scale (base 4) */
+  --ws-space-1:   4px;
+  --ws-space-2:   8px;
+  --ws-space-3:   12px;
+  --ws-space-4:   16px;
+  --ws-space-5:   24px;
+  --ws-space-6:   32px;
+  --ws-space-7:   48px;
+  --ws-space-8:   64px;
+  --ws-space-9:   96px;
+
+  /* ---------- Typography ---------- */
+  --ws-font-sans:    "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --ws-font-display: "Cormorant Garamond", "Newsreader", ui-serif, Georgia, serif;
+  --ws-font-serif:   "Newsreader", "Cormorant Garamond", ui-serif, Georgia, serif;
+  --ws-font-product: "Space Grotesk", "Manrope", sans-serif;   /* SavvySociety / product chrome */
+  --ws-font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Base type scale */
+  --ws-text-xs:   0.68rem;   /* eyebrows / labels */
+  --ws-text-sm:   0.82rem;
+  --ws-text-base: 1rem;
+  --ws-text-md:   1.125rem;
+  --ws-text-lg:   1.3rem;
+  --ws-text-xl:   1.6rem;
+  --ws-text-2xl:  2.1rem;
+  --ws-text-3xl:  2.8rem;
+  --ws-text-4xl:  3.6rem;
+  --ws-text-hero: clamp(3.2rem, 6vw, 5.4rem);
+
+  --ws-leading-tight: 0.9;
+  --ws-leading-snug:  1.12;
+  --ws-leading-body:  1.7;
+
+  /* Signature tracking — the Wise & Savvy all-caps eyebrow look */
+  --ws-track-tight:   -0.05em;
+  --ws-track-normal:  0;
+  --ws-track-eyebrow: 0.24em;
+  --ws-track-label:   0.22em;
+  --ws-track-brand:   0.38em;   /* "WISE & SAVVY" lockup */
+}
+
+/* ---------- Semantic element defaults ---------- */
+
+html, body {
+  background: var(--ws-bg);
+  color: var(--ws-fg);
+  font-family: var(--ws-font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display — serif italic pulls (Cormorant). Tight tracking, light leading. */
+.ws-display,
+h1.ws-h1 {
+  font-family: var(--ws-font-display);
+  font-weight: 600;
+  font-size: var(--ws-text-hero);
+  line-height: var(--ws-leading-tight);
+  letter-spacing: var(--ws-track-tight);
+  color: var(--ws-fg);
+  text-wrap: balance;
+}
+
+h2.ws-h2 {
+  font-family: var(--ws-font-display);
+  font-weight: 600;
+  font-size: var(--ws-text-3xl);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  color: var(--ws-fg);
+  text-wrap: balance;
+}
+
+h3.ws-h3 {
+  font-family: var(--ws-font-display);
+  font-weight: 600;
+  font-size: var(--ws-text-2xl);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ws-fg);
+}
+
+h4.ws-h4 {
+  font-family: var(--ws-font-sans);
+  font-weight: 600;
+  font-size: var(--ws-text-lg);
+  letter-spacing: -0.01em;
+  color: var(--ws-fg);
+}
+
+.ws-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--ws-line);
+  border-radius: var(--ws-radius-pill);
+  background: rgba(14,18,28,0.54);
+  color: var(--ws-fg);
+  font-family: var(--ws-font-sans);
+  font-size: var(--ws-text-xs);
+  letter-spacing: var(--ws-track-eyebrow);
+  text-transform: uppercase;
+}
+.ws-eyebrow::before {
+  content: "";
+  width: 0.5rem; height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--ws-accent);
+  box-shadow: var(--ws-glow-accent), var(--ws-glow-bright);
+}
+
+.ws-label {    /* all-caps tracked label used everywhere */
+  font-family: var(--ws-font-sans);
+  font-size: var(--ws-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ws-track-label);
+  color: var(--ws-fg-dim);
+  font-weight: 500;
+}
+
+.ws-brand-lockup {
+  font-family: var(--ws-font-sans);
+  font-size: var(--ws-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ws-track-brand);
+  font-weight: 500;
+  color: var(--ws-fg);
+}
+
+p.ws-body {
+  font-family: var(--ws-font-sans);
+  font-size: var(--ws-text-md);
+  line-height: 1.75;
+  color: rgba(244,236,221,0.82);
+  text-wrap: pretty;
+}
+
+p.ws-meta {
+  font-family: var(--ws-font-sans);
+  font-size: var(--ws-text-sm);
+  line-height: 1.7;
+  color: var(--ws-fg-dim);
+}
+
+code, kbd, .ws-code {
+  font-family: var(--ws-font-mono);
+  font-size: 0.92em;
+  color: var(--ws-accent);
+}
+
+/* Serif italic pull-quote — a recurring Wise & Savvy voice */
+.ws-pullquote {
+  font-family: var(--ws-font-display);
+  font-style: italic;
+  font-size: var(--ws-text-2xl);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--ws-fg-muted);
+}
+
+/* ---------- Backgrounds ---------- */
+
+.ws-bg-studio {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(87,216,255,0.14), transparent 28%),
+    radial-gradient(circle at 82% 14%, rgba(118,98,255,0.1), transparent 24%),
+    radial-gradient(circle at 54% 54%, rgba(87,216,255,0.05), transparent 30%),
+    linear-gradient(180deg, #080b10 0%, #0b1018 42%, #07090d 100%);
+}
+
+.ws-bg-grid::before {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 160px 160px;
+  mask-image: radial-gradient(circle at center, black, transparent 85%);
+  opacity: 0.12;
+}
+
+/* Divider — the signature soft accent line */
+.ws-soft-divider {
+  height: 1px; width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.12) 18%,
+    rgba(87,216,255,0.3) 50%,
+    rgba(255,255,255,0.12) 82%,
+    transparent 100%
+  );
+}
+
+/* Focus ring */
+.ws-focusable:focus-visible,
+:where(a, button, input, select, textarea).ws-focusable:focus-visible {
+  outline: 2px solid rgba(87,216,255,0.95);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgba(87,216,255,0.12);
+}

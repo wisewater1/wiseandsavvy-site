@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="wisp-b" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7F4ED" stop-opacity="0"></stop>
+      <stop offset="0.2" stop-color="#E9EEF7" stop-opacity="0.18"></stop>
+      <stop offset="0.48" stop-color="#D7E4F4" stop-opacity="0.42"></stop>
+      <stop offset="0.8" stop-color="#E7EDF8" stop-opacity="0.2"></stop>
+      <stop offset="1" stop-color="#F7F4ED" stop-opacity="0"></stop>
+    </linearGradient>
+    <radialGradient id="plume-c" cx="0" cy="0" r="1" gradientTransform="translate(416 566) rotate(90) scale(228 356)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F6F1E9" stop-opacity="0.24"></stop>
+      <stop offset="0.5" stop-color="#D9E6F7" stop-opacity="0.12"></stop>
+      <stop offset="1" stop-color="#D9E6F7" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="plume-d" cx="0" cy="0" r="1" gradientTransform="translate(980 420) rotate(90) scale(212 388)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E6EBF8" stop-opacity="0.28"></stop>
+      <stop offset="0.56" stop-color="#D8E5F6" stop-opacity="0.14"></stop>
+      <stop offset="1" stop-color="#D8E5F6" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+
+  <path d="M-10 486C116 432 244 404 376 404C500 404 604 444 730 446C900 450 1064 380 1226 382C1362 384 1488 430 1600 516V634C1486 646 1364 644 1236 632C1072 618 930 578 770 576C620 574 472 606 324 674C212 726 100 794 -10 878V486Z" fill="url(#wisp-b)"></path>
+  <path d="M58 208C192 174 316 170 442 194C550 214 646 260 760 266C910 274 1046 232 1190 232C1320 232 1456 268 1600 346V432C1488 438 1376 430 1264 410C1110 384 966 336 810 334C654 332 494 372 336 444C240 488 148 544 58 612V208Z" fill="url(#wisp-b)" opacity=".72"></path>
+  <path d="M188 650C332 602 460 580 596 590C706 600 794 650 902 658C1048 670 1178 636 1326 642C1430 646 1520 676 1600 728V822C1498 832 1386 830 1266 820C1120 808 992 778 850 776C688 774 540 808 392 874C316 908 248 950 188 996V650Z" fill="url(#wisp-b)" opacity=".52"></path>
+
+  <ellipse cx="416" cy="566" rx="300" ry="196" fill="url(#plume-c)"></ellipse>
+  <ellipse cx="980" cy="420" rx="320" ry="212" fill="url(#plume-d)"></ellipse>
+</svg>
