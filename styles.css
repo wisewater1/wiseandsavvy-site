@@ -184,6 +184,16 @@ body {
   .ws-plume, .ws-glow { animation: none !important; }
 }
 
+/* Mobile: disable heavy GPU effects */
+@media (max-width: 768px) {
+  .ws-smoke-wrap { display: none; }
+  .ws-glow { display: none; }
+  .ws-fibers { display: none; }
+  .ws-embers { display: none; }
+  .ws-grid { display: none; }
+  .ws-noise { opacity: 0.15; }
+}
+
 .ws-app { position: relative; z-index: 1; }
 .ws-section-shell {
   max-width: 90rem;
@@ -564,3 +574,98 @@ body {
 }
 .ws-footer ul { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--ws-fg-dim); }
 .ws-footer-note { color: var(--ws-fg-dim); font-size: 13px; margin-top: 12px; }
+
+/* ---- Mobile responsive ---- */
+@media (max-width: 768px) {
+  /* Header */
+  .ws-header-inner {
+    padding: 14px 1rem;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .ws-nav {
+    gap: 16px;
+    margin-left: 0;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid var(--ws-line);
+    padding-top: 10px;
+  }
+  .ws-nav-link { font-size: 10px; }
+  .ws-header-cta {
+    margin-left: auto;
+    padding: 10px 16px;
+    font-size: 10px;
+  }
+
+  /* Hero */
+  .ws-hero { padding: 48px 0 40px; }
+  .ws-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .ws-h1 { font-size: clamp(2.2rem, 8vw, 3.2rem); }
+  .ws-hero-meta { gap: 24px; flex-wrap: wrap; }
+  .ws-hero-panel {
+    border-radius: 20px;
+    padding: 24px 20px 20px;
+  }
+  .ws-hero-panel::before { inset: 8px; border-radius: 16px; }
+  .ws-hero-panel-title { font-size: 28px; }
+  .ws-hero-panel-name { font-size: 18px; }
+
+  /* Sections */
+  .ws-section { padding: 56px 0 40px; }
+  .ws-section-head { margin-bottom: 32px; }
+
+  /* Ledger */
+  .ws-ledger-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 28px 0;
+  }
+  .ws-ledger-title { font-size: 28px; }
+  .ws-ledger-cta { align-self: start; }
+
+  /* Artifacts */
+  .ws-artifact-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .ws-artifact {
+    min-height: auto;
+    padding: 20px 18px;
+    border-radius: 16px;
+  }
+
+  /* Inquiries */
+  .ws-inquiries-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .ws-form {
+    border-radius: 16px;
+    padding: 20px;
+  }
+  .ws-form-row { grid-template-columns: 1fr; }
+
+  /* Divider */
+  .ws-divider { height: 60px; }
+
+  /* Footer */
+  .ws-footer { padding: 40px 0 28px; }
+  .ws-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  /* Buttons */
+  .ws-btn { padding: 12px 20px; font-size: 10.5px; }
+  .ws-btn:active { transform: scale(0.95); }
+}
+
+@media (max-width: 480px) {
+  .ws-footer-grid { grid-template-columns: 1fr; }
+  .ws-hero-meta { flex-direction: column; gap: 16px; }
+}

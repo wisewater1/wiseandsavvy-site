@@ -85,7 +85,8 @@ function AmbientBackground() {
 
   React.useEffect(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) return;
+    const isMobile = window.innerWidth <= 768;
+    if (reduceMotion || isMobile) return;
 
     const fibers = fibersRef.current;
     const embers = embersRef.current;
